@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="실제 외국인 여행객과 함께 만드는 MYKOT 여행친구 동행 파일럿 안내"
+    >
+    <meta name="theme-color" content="#0b9f91">
+    <meta property="og:title" content="MYKOT 여행친구 첫 활동 제안">
+    <meta
+      property="og:description"
+      content="첫 추천코스를 실제 외국인 여행객과 운영하고, 진짜 후기를 남겨보세요."
+    >
+    <meta property="og:type" content="website">
+    <title>MYKOT 여행친구 첫 활동 제안</title>
+    <style>
+      :root {
+        --ink: #172c2a;
+        --muted: #617370;
+        --brand: #0b9f91;
+        --brand-dark: #087b71;
+        --brand-soft: #e5f7f3;
+        --cream: #fbf7ef;
+        --paper: #ffffff;
+        --line: #dce8e5;
+        --yellow: #ffd76a;
+        --shadow: 0 22px 60px rgba(28, 65, 60, 0.13);
+        --radius-lg: 32px;
+        --radius-md: 22px;
+        --max: 1120px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family:
+          Pretendard, "Apple SD Gothic Neo", "Noto Sans KR", system-ui,
+          -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.65;
+        word-break: keep-all;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      a {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      figure {
+        margin: 0;
+      }
+
+      .skip-link {
+        position: fixed;
+        left: 16px;
+        top: -80px;
+        z-index: 100;
+        padding: 10px 16px;
+        border-radius: 10px;
+        color: white;
+        background: var(--brand-dark);
+      }
+
+      .skip-link:focus {
+        top: 16px;
+      }
+
+      .wrap {
+        width: min(calc(100% - 40px), var(--max));
+        margin-inline: auto;
+      }
+
+      .topbar {
+        height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 20px;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+      }
+
+      .logo-mark {
+        width: 32px;
+        height: 32px;
+        display: grid;
+        place-items: center;
+        border-radius: 10px;
+        color: white;
+        background: var(--brand);
+        font-size: 15px;
+        letter-spacing: -0.08em;
+      }
+
+      .top-note {
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .hero-shell {
+        position: relative;
+        overflow: hidden;
+        padding: 70px 0 72px;
+        background:
+          radial-gradient(circle at 8% 8%, rgba(255, 215, 106, 0.42), transparent 25%),
+          linear-gradient(135deg, #edf9f6 0%, #fbf8f0 58%, #f6f1e6 100%);
+      }
+
+      .hero-shell::after {
+        content: "";
+        position: absolute;
+        width: 340px;
+        height: 340px;
+        right: -180px;
+        bottom: -190px;
+        border: 44px solid rgba(11, 159, 145, 0.09);
+        border-radius: 50%;
+      }
+
+      .hero {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 0.88fr 1.12fr;
+        align-items: center;
+        gap: 54px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 22px;
+        color: var(--brand-dark);
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--brand);
+        box-shadow: 0 0 0 6px rgba(11, 159, 145, 0.13);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 24px;
+        font-size: clamp(38px, 5vw, 64px);
+        line-height: 1.11;
+        letter-spacing: -0.055em;
+      }
+
+      h1 strong {
+        color: var(--brand-dark);
+        font-weight: 900;
+      }
+
+      .hero-copy {
+        max-width: 560px;
+        margin-bottom: 30px;
+        color: #536763;
+        font-size: 18px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+
+      .button {
+        min-height: 54px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        padding: 0 22px;
+        border: 1px solid transparent;
+        border-radius: 15px;
+        font: inherit;
+        font-weight: 850;
+        cursor: pointer;
+        transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button:focus-visible {
+        outline: 3px solid rgba(11, 159, 145, 0.28);
+        outline-offset: 3px;
+      }
+
+      .button-primary {
+        color: white;
+        background: var(--brand);
+        box-shadow: 0 12px 26px rgba(11, 159, 145, 0.24);
+      }
+
+      .button-primary:hover {
+        background: var(--brand-dark);
+      }
+
+      .button-secondary {
+        border-color: rgba(23, 44, 42, 0.13);
+        background: rgba(255, 255, 255, 0.7);
+      }
+
+      .mini-points {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .mini-points li {
+        padding: 7px 11px;
+        border: 1px solid rgba(11, 159, 145, 0.15);
+        border-radius: 999px;
+        color: #42615d;
+        background: rgba(255, 255, 255, 0.72);
+        font-size: 13px;
+        font-weight: 750;
+      }
+
+      .hero-visual {
+        position: relative;
+      }
+
+      .photo-frame {
+        position: relative;
+        overflow: hidden;
+        border: 8px solid rgba(255, 255, 255, 0.85);
+        border-radius: var(--radius-lg);
+        background: #d9ece8;
+        box-shadow: var(--shadow);
+      }
+
+      .photo-frame img {
+        width: 100%;
+        aspect-ratio: 1.42 / 1;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .photo-badge {
+        position: absolute;
+        left: 24px;
+        bottom: 22px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        max-width: calc(100% - 48px);
+        padding: 13px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 10px 28px rgba(20, 50, 46, 0.15);
+        backdrop-filter: blur(10px);
+      }
+
+      .badge-check {
+        flex: 0 0 auto;
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        color: white;
+        background: var(--brand);
+        font-weight: 900;
+      }
+
+      .photo-badge strong,
+      .photo-badge span {
+        display: block;
+      }
+
+      .photo-badge strong {
+        font-size: 14px;
+      }
+
+      .photo-badge span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .facts {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: -28px;
+        padding: 0;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: white;
+        box-shadow: 0 16px 40px rgba(33, 70, 65, 0.09);
+      }
+
+      .fact {
+        padding: 25px 30px;
+      }
+
+      .fact + .fact {
+        border-left: 1px solid var(--line);
+      }
+
+      .fact-label {
+        display: block;
+        margin-bottom: 5px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .fact strong {
+        font-size: 17px;
+        letter-spacing: -0.02em;
+      }
+
+      section {
+        padding: 106px 0;
+        content-visibility: auto;
+        contain-intrinsic-size: auto 850px;
+      }
+
+      .section-head {
+        max-width: 690px;
+        margin-bottom: 42px;
+      }
+
+      .section-kicker {
+        margin-bottom: 10px;
+        color: var(--brand-dark);
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      h2 {
+        margin-bottom: 14px;
+        font-size: clamp(30px, 4vw, 46px);
+        line-height: 1.22;
+        letter-spacing: -0.045em;
+      }
+
+      .section-desc {
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .value-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .value-card {
+        min-height: 270px;
+        padding: 28px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: white;
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .value-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 40px rgba(25, 69, 63, 0.08);
+      }
+
+      .value-number {
+        width: 46px;
+        height: 46px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 34px;
+        border-radius: 14px;
+        color: var(--brand-dark);
+        background: var(--brand-soft);
+        font-weight: 900;
+      }
+
+      .value-card:nth-child(2) .value-number {
+        color: #88640e;
+        background: #fff5d3;
+      }
+
+      .value-card h3 {
+        margin-bottom: 10px;
+        font-size: 21px;
+        line-height: 1.35;
+        letter-spacing: -0.025em;
+      }
+
+      .value-card p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .process-section {
+        background: #f3f8f6;
+      }
+
+      .process-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+        gap: 46px;
+        align-items: start;
+      }
+
+      .task-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .task-card {
+        position: relative;
+        min-height: 238px;
+        overflow: hidden;
+        padding: 34px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: white;
+      }
+
+      .task-card::after {
+        content: attr(data-step);
+        position: absolute;
+        right: 22px;
+        bottom: -34px;
+        color: rgba(11, 159, 145, 0.07);
+        font-size: 128px;
+        font-weight: 950;
+        line-height: 1;
+      }
+
+      .task-number {
+        position: relative;
+        z-index: 1;
+        width: 46px;
+        height: 46px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 30px;
+        border-radius: 14px;
+        color: white;
+        background: var(--brand);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .task-card h3,
+      .task-card p {
+        position: relative;
+        z-index: 1;
+      }
+
+      .task-card h3 {
+        margin-bottom: 9px;
+        font-size: 22px;
+        letter-spacing: -0.03em;
+      }
+
+      .task-card p {
+        max-width: 430px;
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .mykot-prepares {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 18px;
+        padding: 16px 20px;
+        border: 1px solid #cae5df;
+        border-radius: 16px;
+        color: #42615d;
+        background: #e8f7f3;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .mykot-prepares strong {
+        color: var(--brand-dark);
+      }
+
+      .timeline {
+        display: grid;
+        gap: 12px;
+      }
+
+      .step {
+        display: grid;
+        grid-template-columns: 54px 1fr;
+        gap: 16px;
+        padding: 22px 24px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: white;
+      }
+
+      .step-num {
+        width: 44px;
+        height: 44px;
+        display: grid;
+        place-items: center;
+        border-radius: 13px;
+        color: white;
+        background: var(--brand);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .step h3 {
+        margin: 1px 0 4px;
+        font-size: 18px;
+      }
+
+      .step p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .detail-card {
+        position: sticky;
+        top: 22px;
+        overflow: hidden;
+        border: 1px solid #cde4df;
+        border-radius: var(--radius-md);
+        background: white;
+        box-shadow: 0 16px 36px rgba(30, 74, 68, 0.08);
+      }
+
+      .detail-title {
+        padding: 24px 26px 18px;
+        color: white;
+        background: var(--brand-dark);
+      }
+
+      .detail-title small,
+      .detail-title strong {
+        display: block;
+      }
+
+      .detail-title small {
+        margin-bottom: 5px;
+        opacity: 0.78;
+        font-weight: 700;
+      }
+
+      .detail-title strong {
+        font-size: 21px;
+      }
+
+      .detail-list {
+        margin: 0;
+        padding: 0 26px;
+      }
+
+      .detail-row {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 10px;
+        padding: 17px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .detail-row:last-child {
+        border-bottom: 0;
+      }
+
+      .detail-row dt {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .detail-row dd {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 750;
+      }
+
+      .sample {
+        display: grid;
+        grid-template-columns: 0.92fr 1.08fr;
+        gap: 70px;
+        align-items: center;
+      }
+
+      .route-card {
+        position: relative;
+        padding: 34px;
+        border: 1px solid #cde8e3;
+        border-radius: var(--radius-lg);
+        background: linear-gradient(145deg, #effaf7, #fffaf0);
+      }
+
+      .route-card::before {
+        content: "SAMPLE";
+        position: absolute;
+        top: 22px;
+        right: 24px;
+        color: rgba(8, 123, 113, 0.34);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+      }
+
+      .route-stop {
+        position: relative;
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 14px;
+        align-items: center;
+        min-height: 66px;
+      }
+
+      .route-stop:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        left: 16px;
+        top: 50px;
+        width: 2px;
+        height: 32px;
+        background: #b5ddd6;
+      }
+
+      .route-stop .route-dot {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border: 2px solid white;
+        border-radius: 50%;
+        color: white;
+        background: var(--brand);
+        box-shadow: 0 4px 14px rgba(11, 159, 145, 0.25);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .route-stop strong,
+      .route-stop span {
+        display: block;
+      }
+
+      .route-stop span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .support-list {
+        display: grid;
+        gap: 13px;
+        margin: 28px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .support-list li {
+        position: relative;
+        padding-left: 31px;
+        color: #435c58;
+      }
+
+      .support-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 1px;
+        width: 21px;
+        height: 21px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        color: white;
+        background: var(--brand);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .terms-section {
+        padding-top: 0;
+      }
+
+      .terms-box {
+        display: grid;
+        grid-template-columns: 0.62fr 1.38fr;
+        gap: 50px;
+        padding: 42px;
+        border: 1px solid #eadba8;
+        border-radius: var(--radius-lg);
+        background: #fffaf0;
+      }
+
+      .terms-box h2 {
+        margin-bottom: 8px;
+        font-size: 30px;
+      }
+
+      .terms-box > div > p {
+        margin-bottom: 0;
+        color: #776b4d;
+        font-size: 14px;
+      }
+
+      .terms-list {
+        display: grid;
+        gap: 14px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .terms-list li {
+        padding: 16px 18px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.72);
+        color: #5c543f;
+        font-size: 14px;
+      }
+
+      .terms-list strong {
+        color: var(--ink);
+      }
+
+      .cta-section {
+        padding: 0 0 100px;
+      }
+
+      .cta-card {
+        position: relative;
+        overflow: hidden;
+        padding: 70px 40px;
+        border-radius: var(--radius-lg);
+        color: white;
+        text-align: center;
+        background:
+          radial-gradient(circle at 15% 0%, rgba(255, 215, 106, 0.22), transparent 30%),
+          var(--brand-dark);
+      }
+
+      .cta-card::after {
+        content: "";
+        position: absolute;
+        width: 210px;
+        height: 210px;
+        right: -70px;
+        bottom: -100px;
+        border: 28px solid rgba(255, 255, 255, 0.08);
+        border-radius: 50%;
+      }
+
+      .cta-card h2 {
+        position: relative;
+        z-index: 1;
+        max-width: 700px;
+        margin: 0 auto 14px;
+      }
+
+      .cta-card > p {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 30px;
+        color: rgba(255, 255, 255, 0.76);
+      }
+
+      .reply-box {
+        position: relative;
+        z-index: 1;
+        max-width: 680px;
+        margin: 0 auto 18px;
+        padding: 18px 20px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 16px;
+        text-align: left;
+        background: rgba(255, 255, 255, 0.09);
+        font-size: 14px;
+        white-space: pre-line;
+      }
+
+      .cta-card .button {
+        position: relative;
+        z-index: 1;
+        color: var(--brand-dark);
+        background: white;
+      }
+
+      .small-note {
+        position: relative;
+        z-index: 1;
+        margin: 14px 0 0 !important;
+        font-size: 12px;
+      }
+
+      footer {
+        padding: 28px 0 94px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .footer-inner strong {
+        color: var(--ink);
+      }
+
+      .mobile-cta {
+        display: none;
+      }
+
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 42px;
+        }
+
+        .hero-text {
+          max-width: 720px;
+        }
+
+        .photo-frame img {
+          aspect-ratio: 1.7 / 1;
+        }
+
+        .value-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .value-card {
+          min-height: 0;
+        }
+
+        .value-number {
+          margin-bottom: 22px;
+        }
+
+        .process-layout,
+        .sample,
+        .task-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .detail-card {
+          position: static;
+        }
+
+        .sample {
+          gap: 40px;
+        }
+
+        .terms-box {
+          grid-template-columns: 1fr;
+          gap: 26px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .wrap {
+          width: min(calc(100% - 28px), var(--max));
+        }
+
+        .topbar {
+          height: 62px;
+        }
+
+        .top-note {
+          display: none;
+        }
+
+        .hero-shell {
+          padding: 38px 0 54px;
+        }
+
+        h1 {
+          margin-bottom: 18px;
+          font-size: clamp(36px, 10.8vw, 42px);
+          line-height: 1.13;
+        }
+
+        .hero-copy {
+          font-size: 16px;
+        }
+
+        .hero-actions {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .photo-frame {
+          border-width: 5px;
+          border-radius: 22px;
+        }
+
+        .photo-frame img {
+          aspect-ratio: 1.08 / 1;
+          object-position: 50% center;
+        }
+
+        .photo-badge {
+          left: 14px;
+          bottom: 14px;
+          max-width: calc(100% - 28px);
+          padding: 11px 12px;
+        }
+
+        .facts {
+          grid-template-columns: 1fr;
+          margin-top: -16px;
+        }
+
+        .fact {
+          padding: 19px 22px;
+        }
+
+        .fact + .fact {
+          border-left: 0;
+          border-top: 1px solid var(--line);
+        }
+
+        section {
+          padding: 76px 0;
+        }
+
+        .section-head {
+          margin-bottom: 30px;
+        }
+
+        .value-card,
+        .route-card {
+          padding: 24px;
+        }
+
+        .step {
+          grid-template-columns: 46px 1fr;
+          padding: 18px;
+        }
+
+        .task-card {
+          min-height: 0;
+          padding: 24px;
+        }
+
+        .task-number {
+          margin-bottom: 22px;
+        }
+
+        .mykot-prepares {
+          align-items: flex-start;
+          padding: 15px 16px;
+          text-align: left;
+        }
+
+        .detail-row {
+          grid-template-columns: 70px 1fr;
+        }
+
+        .terms-box {
+          padding: 28px 22px;
+        }
+
+        .cta-section {
+          padding-bottom: 76px;
+        }
+
+        .cta-card {
+          padding: 48px 20px;
+          border-radius: 24px;
+        }
+
+        .footer-inner {
+          flex-direction: column;
+        }
+
+        .mobile-cta {
+          position: fixed;
+          left: 12px;
+          right: 12px;
+          bottom: max(12px, env(safe-area-inset-bottom));
+          z-index: 50;
+          display: flex;
+          min-height: 54px;
+          align-items: center;
+          justify-content: center;
+          border-radius: 16px;
+          color: white;
+          background: var(--brand);
+          box-shadow: 0 14px 30px rgba(8, 94, 85, 0.3);
+          font-weight: 900;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .hero-copy {
+          margin-bottom: 24px;
+        }
+
+        .photo-badge span span {
+          display: none;
+        }
+
+        .step {
+          grid-template-columns: 40px 1fr;
+          gap: 12px;
+        }
+
+        .step-num {
+          width: 38px;
+          height: 38px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+    <header class="wrap topbar" aria-label="상단">
+      <a class="logo" href="#top" aria-label="MYKOT 처음으로">
+        <span class="logo-mark" aria-hidden="true">M</span>
+        <span>MYKOT</span>
+      </a>
+      <span class="top-note">여행친구 동행 파일럿 · 개인 안내 페이지</span>
+    </header>
+
+    <main id="main">
+      <div class="hero-shell" id="top">
+        <div class="wrap hero">
+          <div class="hero-text">
+            <p class="eyebrow">MYKOT TRAVEL FRIEND PILOT</p>
+            <h1>
+              <span data-person-possessive>여행친구님의</span> 첫 추천코스,<br>
+              <strong>실제 여행객과 시작해보세요.</strong>
+            </h1>
+            <p class="hero-copy">
+              구체적인 일정을 먼저 보고 싶다고 답해주셔서, 이번 활동의 진행 방식과
+              MYKOT이 지원하는 내용을 한눈에 정리했습니다.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#schedule">
+                진행 일정 확인하기 <span aria-hidden="true">↓</span>
+              </a>
+              <a class="button button-secondary" href="#terms">참여 조건 먼저 보기</a>
+            </div>
+            <ul class="mini-points">
+              <li>한국어 소통 가능</li>
+              <li>코스 체험비 지원</li>
+              <li>실제 외국인 후기</li>
+            </ul>
+          </div>
+
+          <div class="hero-visual">
+            <figure class="photo-frame">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    ./assets/mykot-indoor-guide-720.webp 720w,
+                    ./assets/mykot-indoor-guide-1440.webp 1440w
+                  "
+                  sizes="(max-width: 640px) 100vw, (max-width: 900px) 90vw, 55vw"
+                >
+                <img
+                  src="./assets/mykot-indoor-guide.jpg"
+                  alt="부산의 실내 문화공간에서 한국인 여행친구가 외국인 여행객에게 휴대전화로 장소를 안내하는 모습"
+                  width="1440"
+                  height="579"
+                  fetchpriority="high"
+                  decoding="async"
+                >
+              </picture>
+              <figcaption class="photo-badge">
+                <span class="badge-check" aria-hidden="true">✓</span>
+                <span>
+                  <strong>실제 외국인 여행객 섭외 완료</strong>
+                  <span>한국어로 편하게 소통할 수 있어요</span>
+                </span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <section class="wrap facts" aria-label="파일럿 핵심 정보">
+        <div class="fact">
+          <span class="fact-label">이번에 필요한 일</span>
+          <strong>실내 코스 1개 + 동행 1회</strong>
+        </div>
+        <div class="fact">
+          <span class="fact-label">MYKOT 지원</span>
+          <strong>사전 협의한 코스 비용</strong>
+        </div>
+        <div class="fact">
+          <span class="fact-label">활동 후 남는 것</span>
+          <strong>첫 운영 경험 + 실제 후기</strong>
+        </div>
+      </section>
+
+      <section aria-labelledby="value-title">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="section-kicker">WHY THIS PILOT</p>
+            <h2 id="value-title">이번 한 번의 동행으로<br>여행친구 활동의 첫 근거가 생깁니다.</h2>
+            <p class="section-desc">
+              아직 추천코스를 등록하지 않았어도 괜찮습니다. MYKOT과 함께 첫 코스를
+              실제 운영 가능한 형태로 완성해보세요.
+            </p>
+          </div>
+
+          <div class="value-grid">
+            <article class="value-card">
+              <span class="value-number">01</span>
+              <h3>아이디어가 실제 운영 경험으로</h3>
+              <p>
+                내가 좋아하는 부산의 공간을 한 코스로 묶고, 실제 여행객과 직접
+                운영해봅니다.
+              </p>
+            </article>
+            <article class="value-card">
+              <span class="value-number">02</span>
+              <h3>프로필에 남는 진짜 첫 후기</h3>
+              <p>
+                동행한 외국인 여행객이 코스와 활동에 후기를 남겨, 이후 여행친구 활동의
+                신뢰가 됩니다.
+              </p>
+            </article>
+            <article class="value-card">
+              <span class="value-number">03</span>
+              <h3>향후 유급 활동으로 이어질 가능성</h3>
+              <p>
+                코스 완성도와 여행객 만족도가 높은 경우, 향후 유급 프리랜서 활동의
+                검토 대상이 됩니다.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="process-section" id="schedule" aria-labelledby="schedule-title">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="section-kicker">ONLY TWO THINGS</p>
+            <h2 id="schedule-title">여행친구가 할 일은<br>딱 두 가지입니다.</h2>
+            <p class="section-desc">
+              무더위를 피할 수 있는 실내 코스를 만들고, 그 코스대로 실제 여행객과
+              함께하면 됩니다.
+            </p>
+          </div>
+
+          <div class="task-grid">
+            <article class="task-card" data-step="1">
+              <span class="task-number">01</span>
+              <h3>무더위를 피한 실내 코스 1개 작성</h3>
+              <p>
+                평소 좋아하던 부산의 실내 장소를 하나의 동선으로 구성해 MYKOT에
+                등록해 주세요.
+              </p>
+            </article>
+            <article class="task-card" data-step="2">
+              <span class="task-number">02</span>
+              <h3>작성한 코스로 외국인 여행객 안내</h3>
+              <p>
+                한국어가 가능한 외국인 여행객과 코스를 직접 둘러보며 친구처럼
+                안내해 주세요.
+              </p>
+            </article>
+          </div>
+
+          <p class="mykot-prepares">
+            <strong>MYKOT이 준비합니다.</strong>
+            외국인 여행객 섭외 · 일정 조율 · 사전 협의한 코스 비용
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="route-title">
+        <div class="wrap sample">
+          <div class="route-card" role="group" aria-label="실내 추천코스 예시">
+            <div class="route-stop">
+              <span class="route-dot">1</span>
+              <span><strong>실내 문화·전시 공간</strong><span>부산다운 이야기로 가볍게 시작</span></span>
+            </div>
+            <div class="route-stop">
+              <span class="route-dot">2</span>
+              <span><strong>현지인이 좋아하는 식당</strong><span>관광지보다 자연스러운 한 끼</span></span>
+            </div>
+            <div class="route-stop">
+              <span class="route-dot">3</span>
+              <span><strong>개성 있는 로컬 카페</strong><span>대화하며 잠시 쉬어가는 시간</span></span>
+            </div>
+            <div class="route-stop">
+              <span class="route-dot">4</span>
+              <span><strong>실내 전망·체험 공간</strong><span>더위를 피해 부산의 분위기로 마무리</span></span>
+            </div>
+          </div>
+
+          <div>
+            <p class="section-kicker">ROUTE EXAMPLE</p>
+            <h2 id="route-title">내가 원래 좋아하던 장소면 충분합니다.</h2>
+            <p class="section-desc">
+              유명 관광지를 많이 넣는 것보다, 왜 이 장소가 좋은지 자연스럽게 말할 수
+              있는 코스가 더 좋은 경험을 만듭니다.
+            </p>
+            <ul class="support-list">
+              <li>외국인 여행객은 이미 MYKOT이 섭외했습니다.</li>
+              <li>외국어가 부담되지 않도록 한국어 가능한 참가자와 동행합니다.</li>
+              <li>코스 구성과 일정 조율 과정은 MYKOT이 함께 돕습니다.</li>
+              <li>사전 협의한 코스 이용 비용은 MYKOT이 지원합니다.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="terms-section" id="terms" aria-labelledby="terms-title">
+        <div class="wrap terms-box">
+          <div>
+            <p class="section-kicker">BEFORE YOU DECIDE</p>
+            <h2 id="terms-title">미리 알려드릴 점</h2>
+            <p>부담 없이 판단할 수 있도록 중요한 조건을 숨김없이 안내드립니다.</p>
+          </div>
+          <ul class="terms-list">
+            <li>
+              <strong>별도의 활동비는 지급되지 않습니다.</strong> 대신 사전에 합의한
+              코스 이용 비용을 MYKOT이 지원합니다.
+            </li>
+            <li>
+              동행 과정은 콘텐츠 제작을 위해 촬영되며, <strong>얼굴이 노출될 수
+              있습니다.</strong> 촬영물의 사용 범위는 참여 전에 안내하고 동의를 받습니다.
+            </li>
+            <li>
+              향후 유급 활동은 확정 보상이 아닙니다. <strong>코스 완성도와 여행객
+              만족도가 높은 경우</strong> 별도 프리랜서 활동을 검토합니다.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cta-section" id="reply" aria-labelledby="reply-title">
+        <div class="wrap cta-card">
+          <h2 id="reply-title">가능한 날짜와 시간대를 알려주세요.</h2>
+          <p>일정을 먼저 맞춘 뒤, 관심 지역과 테마에 맞춰 코스를 함께 구체화하겠습니다.</p>
+          <div class="reply-box" id="replyText">참여 가능한 날짜:
+1)
+2)
+3)
+주로 가능한 요일:
+가능한 시간대:
+관심 지역 또는 테마:</div>
+          <button class="button" id="copyButton" type="button">답장 문구 복사하기</button>
+          <p class="small-note">복사한 문구를 기존에 연락받은 문자창에 붙여넣어 보내주세요.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap footer-inner">
+        <span><strong>MYKOT</strong> · 어디보다 누구와</span>
+        <span>실제 여행객과 함께 만드는 여행친구 동행 파일럿</span>
+      </div>
+    </footer>
+
+    <a class="mobile-cta" href="#reply">가능한 일정 알려주기</a>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const person = (params.get("name") || "여행친구").trim();
+      const possessive = `${person}님의`;
+
+      document.querySelectorAll("[data-person-possessive]").forEach((node) => {
+        node.textContent = possessive;
+      });
+
+      if (params.has("name")) {
+        document.title = `${person}님께 드리는 MYKOT 여행친구 첫 활동 제안`;
+      }
+
+      const copyButton = document.getElementById("copyButton");
+      const replyText = document.getElementById("replyText");
+
+      copyButton.addEventListener("click", async () => {
+        const originalLabel = copyButton.textContent;
+        try {
+          await navigator.clipboard.writeText(replyText.textContent.trim());
+          copyButton.textContent = "복사했습니다 ✓";
+        } catch (error) {
+          const selection = window.getSelection();
+          const range = document.createRange();
+          range.selectNodeContents(replyText);
+          selection.removeAllRanges();
+          selection.addRange(range);
+          copyButton.textContent = "문구를 선택했습니다";
+        }
+        window.setTimeout(() => {
+          copyButton.textContent = originalLabel;
+        }, 1800);
+      });
+    </script>
+  </body>
+</html>
